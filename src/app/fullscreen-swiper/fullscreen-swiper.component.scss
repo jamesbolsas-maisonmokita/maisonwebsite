@@ -1,0 +1,119 @@
+:host {
+    display: block;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .swiper-slide {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .fullscreen-page {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4); // Overlay scuro per migliorare la leggibilità
+    }
+  }
+  
+  .page-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
+  }
+  
+  .page-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .page-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  
+  .navigation-hints {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  
+  .navigation-hint {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+    }
+    
+    .hint-text {
+      margin: 0 10px;
+    }
+    
+    .hint-arrow {
+      width: 20px;
+      height: 20px;
+      border-top: 2px solid white;
+      border-right: 2px solid white;
+    }
+    
+    &.hint-right {
+      flex-direction: row;
+      .hint-arrow {
+        transform: rotate(45deg);
+      }
+    }
+    
+    &.hint-left {
+      flex-direction: row-reverse;
+      .hint-arrow {
+        transform: rotate(-135deg);
+      }
+    }
+    
+    &.hint-up {
+      .hint-arrow {
+        transform: rotate(-45deg);
+      }
+    }
+    
+    &.hint-down {
+      .hint-arrow {
+        transform: rotate(135deg);
+      }
+    }
+  }

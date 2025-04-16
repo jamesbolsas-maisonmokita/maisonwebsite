@@ -1,0 +1,24 @@
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div *ngFor="let page of pages; let i = index" class="swiper-slide" [id]="page.id">
+        <div class="fullscreen-page" [ngStyle]="{'background-image': 'url(' + page.backgroundImage + ')'}">
+          <div class="page-content">
+            <h1 class="page-title">{{page.title}}</h1>
+            <p class="page-subtitle">{{page.subtitle}}</p>
+            
+            <div class="navigation-hints">
+              <div *ngFor="let link of page.links" class="navigation-hint" 
+                  [ngClass]="'hint-' + link.direction"
+                  (click)="navigateTo(link.to)">
+                <span class="hint-text">{{link.text}}</span>
+                <div class="hint-arrow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Opzionalmente aggiungi indicatori di navigazione -->
+    <div class="swiper-pagination"></div>
+  </div>
