@@ -1,21 +1,18 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { FullscreenSwiperComponent } from './fullscreen-swiper/fullscreen-swiper.component';
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// Importiamo SwiperModule
-import { SwiperModule } from 'swiper/angular';
+import { AppComponent } from './app.component';
+import { FullscreenPageComponent } from './components/fullscreen-page/fullscreen-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FullscreenSwiperComponent
+    FullscreenPageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    SwiperModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

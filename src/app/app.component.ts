@@ -1,13 +1,28 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { FullscreenSwiperComponent } from "./fullscreen-swiper/fullscreen-swiper.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FullscreenSwiperComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'hello-world-site';
+  title = 'infinite-gallery';
 }
+
+// src/main.ts
+import { enableProdMode } from '@angular/core';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from '../app.module';
+import { environment } from '../environments/environment';
+
+// Importa Hammer.js per il supporto ai gesti touch
+import 'hammerjs';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
+

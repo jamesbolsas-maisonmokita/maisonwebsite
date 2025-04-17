@@ -1,0 +1,50 @@
+.fullscreen-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .fullscreen-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .navigation-hint {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    
+    &:hover {
+      opacity: 0.7;
+    }
+    
+    .arrow {
+      font-size: 3rem;
+      color: white;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    }
+  }
+  
+  .left-hint {
+    left: 0;
+  }
+  
+  .right-hint {
+    right: 0;
+  }

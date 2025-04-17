@@ -1,0 +1,10 @@
+<div class="fullscreen-container" *ngIf="currentPage" [@slideAnimation]>
+    <div class="fullscreen-image" [style.background-image]="'url(' + currentPage.imageUrl + ')'">
+      <div class="navigation-hint left-hint" (click)="navigateLeft()">
+        <span class="arrow">←</span>
+      </div>
+      <div class="navigation-hint right-hint" (click)="navigateRight()">
+        <span class="arrow">→</span>
+      </div>
+    </div>
+  </div>
