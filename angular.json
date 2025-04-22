@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "hello-world-site": {
+    "localwebsite": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/hello-world-site",
+            "outputPath": "dist/maisonwebsite",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -29,13 +29,30 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+   {
+    "glob": "**/*",
+    "input": "src/assets",
+    "output": "assets"
+  },
+              {
+                "glob": "**/*",
+                "input": "src/assets/images",
+                "output": "/assets/images"
               }
             ],
+            
             "styles": [
-              "src/styles.scss",
-              "node_modules/swiper/swiper-bundle.css"
+              "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+               "node_modules/hammerjs/hammer.min.js"
+            ],
+            "server": "src/main.server.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -65,10 +82,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "hello-world-site:build:production"
+              "buildTarget": "maisonwebsite:build:production"
             },
             "development": {
-              "buildTarget": "hello-world-site:build:development"
+              "buildTarget": "maisonwebsite:build:development"
             }
           },
           "defaultConfiguration": "development"

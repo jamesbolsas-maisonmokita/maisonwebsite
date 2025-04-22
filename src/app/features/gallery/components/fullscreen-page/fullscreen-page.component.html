@@ -1,0 +1,20 @@
+<div 
+  *ngIf="currentPage" 
+  class="fullscreen-container" 
+  appSwipe
+  (swipeLeft)="onSwipeLeft()"
+  (swipeRight)="onSwipeRight()"
+  [@slideState]="animationState">
+  
+  <div class="fullscreen-image" [style.background-image]="'url(' + currentPage.imageUrl + ')'">
+    <p>Immagine corrente: {{ currentPage.imageUrl }}</p>
+    <div class="navigation-overlay">
+      <div class="navigation-hint left-hint" (click)="onSwipeRight()">
+        <span class="arrow">←</span>
+      </div>
+      <div class="navigation-hint right-hint" (click)="onSwipeLeft()">
+        <span class="arrow">→</span>
+      </div>
+    </div>
+  </div>
+</div>
